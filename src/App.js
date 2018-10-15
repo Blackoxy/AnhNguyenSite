@@ -1,24 +1,32 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import About from './components/About';
 import Home from './components/Home';
 import Contact from './components/Contact';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
+import Projects from './components/Projects';
+import Error from './components/Error';
+import Navigation from './components/Navigation';
+import './css/App.css';
 
-library.add(faStroopwafel)
+
 
 class App extends Component {
   render() {
     return (
+      <div className='main'>
       <BrowserRouter>
         <div>
-          <Route path='/' component={Home} />
-          <Route path='/about' component={About} />
-          <Route path='/contact' component={Contact} />
+        <Navigation />
+        <Switch>
+          <Route path='/' component={Home} exact />
+          <Route path='/about' component={About} exact />
+          <Route path='/contact' component={Contact} exact />
+          <Route path='/projects' component={Projects} exact />   
+          <Route component={Error} />
+        </Switch>
         </div>
       </BrowserRouter>
+      </div>
     );
   }
 }

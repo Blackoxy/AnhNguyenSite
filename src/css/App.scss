@@ -1,0 +1,12 @@
+$colors: (
+  lightred: #e03838,
+  darkred: #9b1818
+);
+
+@function colorPick($selectColor){
+  @return map-get($colors, $selectColor)
+}
+
+.main {
+  background: colorPick(darkred)
+}
