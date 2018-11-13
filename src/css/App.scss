@@ -1,12 +1,49 @@
 $colors: (
   lightred: #e03838,
-  darkred: #9b1818
+  darkred: #9b1818,
+  lightgray: #d9d9d9,
+  gray: #666666,
+  darkgray: #333333,
+  black: black
 );
 
 @function colorPick($selectColor){
   @return map-get($colors, $selectColor)
 }
 
-.main {
-  background: colorPick(darkred)
+// .main {
+//   background: colorPick(lightgray);
+// }
+
+.navigation {
+  background: colorPick(lightgray);
+  color: colorPick(darkgray);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: justify;
+  overflow: hidden;
+
+  a {
+    float: left;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+  a:hover {
+    color: colorPick(lightred);
+    background-color: colorPick(black)
+  }
+
+  a.active {
+    background-color: colorPick(gray);
+    color: white;
+  }
+}
+
+.selfie {
+  width: 300px;
 }

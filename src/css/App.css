@@ -1,4 +1,33 @@
-.main {
-  background: #9b1818;
+.navigation {
+  background: #d9d9d9;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: justify;
+  overflow: hidden;
+}
+
+.navigation a {
+  float: left;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+.navigation a:hover {
+  color: #e03838;
+  background-color: black;
+}
+
+.navigation a.active {
+  background-color: #666666;
+  color: white;
+}
+
+.selfie {
+  width: 300px;
 }
 /*# sourceMappingURL=App.css.map */
